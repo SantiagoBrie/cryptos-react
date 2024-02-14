@@ -16,7 +16,6 @@ const InputSubmit = styled.input`
     border-radius:5px;
     transition: background-color .3s ease;
     margin-top: 30px;
-
     &:hover {
         background-color: #747DFE;
         cursor: pointer;
@@ -52,8 +51,10 @@ const Formulario = ({setMonedas}) => {
         e.preventDefault()
         if ([moneda, criptomoneda].includes("")) {
             setError(true)
+            return
         }
 
+        setError(false)
         setMonedas({
             moneda,
             criptomoneda
